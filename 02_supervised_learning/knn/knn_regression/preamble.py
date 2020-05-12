@@ -10,7 +10,7 @@ plt.rcParams['figure.dpi'] = 300
 plt.rcParams['image.cmap'] = "viridis"
 plt.rcParams['image.interpolation'] = "none"
 plt.rcParams['savefig.bbox'] = "tight"
-plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['lines.linewidth'] = 1
 plt.rcParams['legend.numpoints'] = 1
 plt.rc('axes', prop_cycle=(
     cycler('color', mglearn.plot_helpers.cm_cycle.colors) +
