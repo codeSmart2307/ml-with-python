@@ -30,7 +30,7 @@ R^2 scores are low and also because the dataset is low dimensional.
 """
 
 # -----------------------------------------------------------
-# Linear regression with wave dataset
+# Linear regression with extended boston dataset
 # -----------------------------------------------------------
 
 X, y = mglearn.datasets.load_extended_boston()
