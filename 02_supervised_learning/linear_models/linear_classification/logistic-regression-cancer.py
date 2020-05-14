@@ -63,4 +63,27 @@ plt.ylim(-5, 5)
 plt.xlabel("Feature")
 plt.ylabel("Coefficient magnitude")
 plt.legend()
+# plt.show()
+
+# -----------------------------------------------------------
+# More interpretable model with L1 regularization
+# -----------------------------------------------------------
+
+for C, marker in zip([0.001, 1, 100], ['o', '^', 'v']):
+    lr_l1 = LogisticRegression(C=C, solver='liblinear', penalty="l1").fit(X_train, y_train)
+    print("Training accuracy of l1 logreg with C={:.3f}: {:.2f}".format(
+          C, lr_l1.score(X_train, y_train)))
+    print("Test accuracy of l1 logreg with C={:.3f}: {:.2f}".format(
+          C, lr_l1.score(X_test, y_test)))
+    plt.plot(lr_l1.coef_.T, marker, label="C={:.3f}".format(C))
+
+plt.xticks(range(cancer.data.shape[1]), cancer.feature_names, rotation=90)
+xlims = plt.xlim()
+plt.hlines(0, xlims[0], xlims[1])
+plt.xlim(xlims)
+plt.xlabel("Feature")
+plt.ylabel("Coefficient magnitude")
+
+plt.ylim(-5, 5)
+plt.legend(loc=3)
 plt.show()
